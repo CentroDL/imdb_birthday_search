@@ -7,6 +7,6 @@ require 'httparty'
 require 'uri'
 require 'yajl'
 
-require_relative 'server'
+require_relative 'app'
 
-# run IvyImdbAPI::Server
+run IvyIMDB::API
