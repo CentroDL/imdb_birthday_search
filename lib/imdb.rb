@@ -21,7 +21,8 @@ class IMDB
     private
 
     def invalid_date?(month, day)
-      # 2016 was the last leap year, used to check if month + day actually exist
+      # used to check if month + day actually exist
+      # 2016 was the last leap year so we dont miss 2/29
       !Date.valid_date?(2016, month, day)
     end
 
