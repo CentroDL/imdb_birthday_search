@@ -6,7 +6,8 @@ gem 'sinatra-contrib'
 gem 'sinatra-flash'
 gem 'httparty'
 gem 'nokogiri'
-gem 'yajl-ruby', require: 'yajl'
+gem 'parallel'
+gem 'webcache'
 # gem 'redis'
 
 group :development do

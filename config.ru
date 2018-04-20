@@ -6,6 +6,7 @@ require 'sinatra/namespace'
 require 'nokogiri'
 require 'open-uri'
 require 'yajl'
+require 'parallel'
 
 require 'pry'
 
