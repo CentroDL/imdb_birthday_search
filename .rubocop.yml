@@ -1,0 +1,10 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# Remove this once fail conditions are better known
+# and accomodated for. - Dennis
+Style/RescueStandardError:
+  Enabled: false
