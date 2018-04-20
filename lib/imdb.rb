@@ -1,11 +1,12 @@
 class IMDB
   BASE_URL = 'https://www.imdb.com/'
+  @@cache = WebCache.new
 
   def self.people_by_birthday(month: nil, day: nil)
     raise(ArgumentError, 'Invalid Date') if !Date.valid_date?(2016, month.to_i, day.to_i)
 
-    response    = open(search_url(month, day))
-    people_divs = Nokogiri::HTML(response).css('.lister-item')
+    response    = @@cache.get(search_url(month, day))
+    people_divs = Nokogiri::HTML(response.content).css('.lister-item')
 
     people = Parallel.map(people_divs, in_processes: 50) do |person_div|
                {
@@ -41,7 +42,7 @@ class IMDB
     end
 
     def movie_data(movie_url)
-      response = Nokogiri::HTML(open(movie_url))
+      response = Nokogiri::HTML(@@cache.get(movie_url).content)
 
       {
         title:    title(response),

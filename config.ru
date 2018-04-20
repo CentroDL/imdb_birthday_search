@@ -7,6 +7,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'yajl'
 require 'parallel'
+require 'webcache'
 
 require 'pry'
 
